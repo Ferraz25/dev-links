@@ -8,8 +8,8 @@
   --text-color: #ffffff;
   --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
-  --surface-color: rgba(255, 255, 255, 0.1);
-  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
 }
@@ -17,7 +17,7 @@
 .light {
   --text-color: #000000;
   --bg-url: url(./assets/bg-mobile-light.jpg);
-  --stroke-color: rgba(0, 0, 0, 0.05);
+  --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
@@ -25,12 +25,7 @@
 }
 
 body {
-  background-image: var(--bg-url);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-
-  height: 100vh;
+  background: var(--bg-url) no-repeat top center/cover;
 }
 
 body * {
@@ -41,7 +36,7 @@ body * {
 #container {
   width: 100%;
   max-width: 588px;
-  margin: 56px auto 32px;
+  margin: 56px auto 0px;
 
   padding: 0 24px;
 }
@@ -58,18 +53,16 @@ body * {
 
 #profile p {
   font-weight: 500;
-  line-height: 25px;
+  line-height: 24px;
+  margin-top: 8px;
 }
 
 /* switch */
-
 #switch {
   position: relative;
   width: 64px;
 
   margin: 4px auto;
-
-  cursor: pointer;
 }
 
 #switch button {
@@ -107,6 +100,7 @@ body * {
   border-radius: 9999px;
 }
 
+/*links*/
 ul {
   list-style: none;
 
@@ -119,8 +113,8 @@ ul {
 
 ul li a {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   padding: 16px 24px;
 
@@ -136,12 +130,15 @@ ul li a {
 
   transition: background 0.2s;
 }
+
+/*pseudo-selector*/
 ul li a:hover {
   background: var(--surface-color-hover);
 
   border: 1.5px solid var(--text-color);
 }
 
+/*social links*/
 #social-links {
   display: flex;
   justify-content: center;
@@ -155,7 +152,6 @@ ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 16px;
 
   transition: background 0.2s;
@@ -163,8 +159,6 @@ ul li a:hover {
 }
 
 #social-links a:hover {
-  padding: 16px;
-
   background: var(--highlight-color);
 }
 
